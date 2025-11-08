@@ -14,20 +14,21 @@ namespace PMII_Examen1.Models
         [MaxLength(200), NotNull]
         public string Nombre { get; set; }
 
-        public DateTime Fecha_ingreso { get; set; }
+        public DateTime Fecha_Ingreso { get; set; }
 
-        [MaxLength(100)]
+        [MaxLength(100), NotNull]
         public string Puesto { get; set; }
 
         [MaxLength(100)]
         public string Correo { get; set; }
 
-        public string ImageBase64 { get; set; }
+        public string Foto { get; set; }
+
+        public string FechaIngresoFormateada => Fecha_Ingreso.ToString("dd/MM/yyyy");
 
         public Empleado(){
-            Fecha_ingreso = DateTime.Now;
+            Fecha_Ingreso = DateTime.Now;
             
         }
-        
     }
 }
